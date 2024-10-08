@@ -6,14 +6,14 @@ function App() {
 
   // Todos abrufen
   useEffect(() => {
-    fetch('http://localhost:5000/api/todos')
+    fetch('https://todotest-oxq3.onrender.com/api/todos')
       .then((response) => response.json())
       .then((data) => setTodos(data))
       .catch((error) => console.error('Error fetching todos:', error));
   }, []);
 
   const addTodo = () => {
-    fetch('http://localhost:5000/api/todos', {
+    fetch('https://todotest-oxq3.onrender.com/api/todos', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ todo: newTodo }),
@@ -28,7 +28,7 @@ function App() {
 
 
   const deleteTodo = (index) => {
-    fetch(`http://localhost:5000/api/todos/${index}`, {
+    fetch(`https://todotest-oxq3.onrender.com/api/todos/${index}`, {
       method: 'DELETE',
     })
       .then((response) => response.json())
